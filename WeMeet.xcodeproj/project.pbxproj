@@ -16,6 +16,7 @@
 		F82E2CC62A7836B4000EEC1B /* WeMeetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CC52A7836B4000EEC1B /* WeMeetUITests.swift */; };
 		F82E2CC82A7836B4000EEC1B /* WeMeetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CC72A7836B4000EEC1B /* WeMeetUITestsLaunchTests.swift */; };
 		F82E2CDD2A784291000EEC1B /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CDC2A784291000EEC1B /* RoomListView.swift */; };
+		F82E2CDF2A78431A000EEC1B /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CDE2A78431A000EEC1B /* RoomListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		F82E2CC52A7836B4000EEC1B /* WeMeetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMeetUITests.swift; sourceTree = "<group>"; };
 		F82E2CC72A7836B4000EEC1B /* WeMeetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMeetUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F82E2CDC2A784291000EEC1B /* RoomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
+		F82E2CDE2A78431A000EEC1B /* RoomListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				F82E2CDC2A784291000EEC1B /* RoomListView.swift */,
+				F82E2CDE2A78431A000EEC1B /* RoomListViewModel.swift */,
 			);
 			path = Rooms;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			files = (
 				F82E2CAF2A7836B4000EEC1B /* Persistence.swift in Sources */,
 				F82E2CDD2A784291000EEC1B /* RoomListView.swift in Sources */,
+				F82E2CDF2A78431A000EEC1B /* RoomListViewModel.swift in Sources */,
 				F82E2CB22A7836B4000EEC1B /* WeMeet.xcdatamodeld in Sources */,
 				F82E2CA62A7836B2000EEC1B /* WeMeetApp.swift in Sources */,
 			);

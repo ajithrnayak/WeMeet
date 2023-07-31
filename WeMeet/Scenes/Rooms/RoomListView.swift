@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct RoomListView: View {
+    @StateObject var viewModel: RoomListViewModel
+
     var body: some View {
-        Text("Hello, WeMeet!")
+        NavigationView {
+            ScrollView {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 420))]) {
+                    ForEach((0...20), id: \.self) {_ in
+                        Color(.red)
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .frame(height: 300)
+                    }
+                }
+                .padding()
+            }
+            .navigationTitle(viewModel.title)
+        }
+        .navigationViewStyle(.stack)
     }
 }
 
 struct RoomListView_Previews: PreviewProvider {
     static var previews: some View {
-        RoomListView()
+        RoomListView(viewModel: RoomListViewModel())
     }
 }

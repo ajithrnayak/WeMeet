@@ -13,8 +13,9 @@ struct WeMeetApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RoomListView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            RoomListView(viewModel: RoomListViewModel())
+                .environment(\.managedObjectContext,
+                              persistenceController.container.viewContext)
         }
     }
 }
