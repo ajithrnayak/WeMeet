@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F82E2CA62A7836B2000EEC1B /* WeMeetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CA52A7836B2000EEC1B /* WeMeetApp.swift */; };
-		F82E2CA82A7836B2000EEC1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CA72A7836B2000EEC1B /* ContentView.swift */; };
 		F82E2CAA2A7836B4000EEC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82E2CA92A7836B4000EEC1B /* Assets.xcassets */; };
 		F82E2CAD2A7836B4000EEC1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82E2CAC2A7836B4000EEC1B /* Preview Assets.xcassets */; };
 		F82E2CAF2A7836B4000EEC1B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CAE2A7836B4000EEC1B /* Persistence.swift */; };
@@ -16,6 +15,7 @@
 		F82E2CBC2A7836B4000EEC1B /* WeMeetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CBB2A7836B4000EEC1B /* WeMeetTests.swift */; };
 		F82E2CC62A7836B4000EEC1B /* WeMeetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CC52A7836B4000EEC1B /* WeMeetUITests.swift */; };
 		F82E2CC82A7836B4000EEC1B /* WeMeetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CC72A7836B4000EEC1B /* WeMeetUITestsLaunchTests.swift */; };
+		F82E2CDD2A784291000EEC1B /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CDC2A784291000EEC1B /* RoomListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 /* Begin PBXFileReference section */
 		F82E2CA22A7836B2000EEC1B /* WeMeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeMeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82E2CA52A7836B2000EEC1B /* WeMeetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMeetApp.swift; sourceTree = "<group>"; };
-		F82E2CA72A7836B2000EEC1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F82E2CA92A7836B4000EEC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F82E2CAC2A7836B4000EEC1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F82E2CAE2A7836B4000EEC1B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		F82E2CC12A7836B4000EEC1B /* WeMeetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeMeetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82E2CC52A7836B4000EEC1B /* WeMeetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMeetUITests.swift; sourceTree = "<group>"; };
 		F82E2CC72A7836B4000EEC1B /* WeMeetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMeetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F82E2CDC2A784291000EEC1B /* RoomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				F82E2CA52A7836B2000EEC1B /* WeMeetApp.swift */,
-				F82E2CA72A7836B2000EEC1B /* ContentView.swift */,
-				F82E2CA92A7836B4000EEC1B /* Assets.xcassets */,
-				F82E2CAE2A7836B4000EEC1B /* Persistence.swift */,
-				F82E2CB02A7836B4000EEC1B /* WeMeet.xcdatamodeld */,
-				F82E2CAB2A7836B4000EEC1B /* Preview Content */,
+				F82E2CD62A784168000EEC1B /* Scenes */,
+				F82E2CD52A783964000EEC1B /* Persistence */,
+				F82E2CD42A783942000EEC1B /* Resources */,
 			);
 			path = WeMeet;
 			sourceTree = "<group>";
@@ -131,6 +129,40 @@
 				F82E2CC72A7836B4000EEC1B /* WeMeetUITestsLaunchTests.swift */,
 			);
 			path = WeMeetUITests;
+			sourceTree = "<group>";
+		};
+		F82E2CD42A783942000EEC1B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F82E2CA92A7836B4000EEC1B /* Assets.xcassets */,
+				F82E2CAB2A7836B4000EEC1B /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F82E2CD52A783964000EEC1B /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				F82E2CAE2A7836B4000EEC1B /* Persistence.swift */,
+				F82E2CB02A7836B4000EEC1B /* WeMeet.xcdatamodeld */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		F82E2CD62A784168000EEC1B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F82E2CDB2A784270000EEC1B /* Rooms */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F82E2CDB2A784270000EEC1B /* Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				F82E2CDC2A784291000EEC1B /* RoomListView.swift */,
+			);
+			path = Rooms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,7 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F82E2CAF2A7836B4000EEC1B /* Persistence.swift in Sources */,
-				F82E2CA82A7836B2000EEC1B /* ContentView.swift in Sources */,
+				F82E2CDD2A784291000EEC1B /* RoomListView.swift in Sources */,
 				F82E2CB22A7836B4000EEC1B /* WeMeet.xcdatamodeld in Sources */,
 				F82E2CA62A7836B2000EEC1B /* WeMeetApp.swift in Sources */,
 			);
@@ -424,7 +456,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WeMeet/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"WeMeet/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -452,7 +484,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WeMeet/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"WeMeet/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
