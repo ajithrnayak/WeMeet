@@ -43,7 +43,7 @@ struct RoomView: View {
     let room: Room
 
     var body: some View {
-        VStack {
+        VStack(spacing: Spacing.double.value) {
             AsyncImage(
                 url: room.thumbnailURL,
                 transaction: .init(animation: .spring())
@@ -53,8 +53,8 @@ struct RoomView: View {
             .frame(width: .infinity, height: 220)
             .mask(RoundedRectangle(cornerRadius: CornerRadius.grids))
 
-            HStack(alignment: .center) {
-                VStack(alignment: .leading, spacing: Spacing.half.value) {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading, spacing: Spacing.full.value) {
                     Text("\(room.name)")
                         .font(.title2)
                         .fontWeight(.bold)
@@ -66,9 +66,11 @@ struct RoomView: View {
 
                 Spacer(minLength: 8)
 
-                Button("Book") {
+                Button("Book!") {
                     print("Book my room tapped!")
                 }
+                .buttonStyle(PrimaryButton())
+                .fixedSize()
             }
             .fixedSize(horizontal: false, vertical: true)
         }

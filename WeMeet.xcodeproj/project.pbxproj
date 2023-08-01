@@ -23,6 +23,7 @@
 		F82E2D092A799ED5000EEC1B /* Rooms.json in Resources */ = {isa = PBXBuildFile; fileRef = F82E2D082A799ED5000EEC1B /* Rooms.json */; };
 		F82E2D0C2A79AAAF000EEC1B /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D0B2A79AAAF000EEC1B /* Spacing.swift */; };
 		F82E2D0E2A79AC95000EEC1B /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D0D2A79AC95000EEC1B /* CornerRadius.swift */; };
+		F82E2D112A79ADA4000EEC1B /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D102A79ADA4000EEC1B /* PrimaryButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		F82E2D082A799ED5000EEC1B /* Rooms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Rooms.json; sourceTree = "<group>"; };
 		F82E2D0B2A79AAAF000EEC1B /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		F82E2D0D2A79AC95000EEC1B /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
+		F82E2D102A79ADA4000EEC1B /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,8 +193,9 @@
 		F82E2CE02A7986DD000EEC1B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				F82E2D0A2A79AAA1000EEC1B /* Constants */,
 				F82E2D052A799DD9000EEC1B /* SampleDataFetcher.swift */,
+				F82E2D0F2A79AD70000EEC1B /* ButtonStyles */,
+				F82E2D0A2A79AAA1000EEC1B /* Constants */,
 				F82E2D002A799A00000EEC1B /* Extensions */,
 			);
 			path = Shared;
@@ -240,6 +243,14 @@
 				F82E2D0D2A79AC95000EEC1B /* CornerRadius.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		F82E2D0F2A79AD70000EEC1B /* ButtonStyles */ = {
+			isa = PBXGroup;
+			children = (
+				F82E2D102A79ADA4000EEC1B /* PrimaryButtonStyle.swift */,
+			);
+			path = ButtonStyles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +386,7 @@
 			files = (
 				F82E2CAF2A7836B4000EEC1B /* Persistence.swift in Sources */,
 				F82E2D022A799A1C000EEC1B /* Logger+Custom.swift in Sources */,
+				F82E2D112A79ADA4000EEC1B /* PrimaryButtonStyle.swift in Sources */,
 				F82E2D0E2A79AC95000EEC1B /* CornerRadius.swift in Sources */,
 				F82E2D0C2A79AAAF000EEC1B /* Spacing.swift in Sources */,
 				F82E2CDD2A784291000EEC1B /* RoomListView.swift in Sources */,
