@@ -50,7 +50,7 @@ struct RoomView: View {
             ) {
                 handleAsyncImagePhase($0)
             }
-            .frame(width: .infinity, height: 220)
+            .frame(height: 220)
             .mask(RoundedRectangle(cornerRadius: CornerRadius.grids))
 
             HStack(alignment: .top) {
