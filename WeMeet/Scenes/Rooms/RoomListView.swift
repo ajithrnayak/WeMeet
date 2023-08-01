@@ -25,6 +25,9 @@ struct RoomListView: View {
             .navigationTitle(viewModel.title)
         }
         .navigationViewStyle(.stack)
+        .task {
+            await viewModel.loadRooms()
+        }
     }
 }
 
