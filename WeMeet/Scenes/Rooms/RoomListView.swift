@@ -34,6 +34,7 @@ struct RoomListView: View {
             }
             .navigationTitle(viewModel.title)
             .loading(if: viewModel.isLoading)
+            .loadingOverlay(if: viewModel.showLoadingOverlay)
         }
         .navigationViewStyle(.stack)
     }

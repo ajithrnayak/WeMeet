@@ -35,13 +35,16 @@ final class RoomListViewModel: ObservableObject {
 
     @Published private(set) var rooms: [Room]
     @Published var isLoading: Bool
+    @Published var showLoadingOverlay: Bool
 
     // MARK: - Init
 
     init(rooms: [Room] = [],
-         isLoading: Bool = false) {
+         isLoading: Bool = false,
+         showLoadingOverlay: Bool = false) {
         self.rooms = rooms
         self.isLoading = isLoading
+        self.showLoadingOverlay = showLoadingOverlay
         // initiate data refresh without waiting for view to appear
         loadRooms()
     }
@@ -75,7 +78,10 @@ final class RoomListViewModel: ObservableObject {
     }
 
     func bookRoom(_ room: Room) {
+        showLoadingOverlay = true
         print("Room Booking Requested!")
+        // make the booking happen
+        showLoadingOverlay = false
     }
 }
 
