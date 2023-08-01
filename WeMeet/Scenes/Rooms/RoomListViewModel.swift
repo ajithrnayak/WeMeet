@@ -11,7 +11,8 @@ struct RoomsResponse: Decodable {
     let rooms: [Room]
 }
 
-struct Room: Codable {
+struct Room: Codable, Identifiable {
+    var id: String { name }
     let name: String
     let spots: Int
     let thumbnail: String
@@ -20,12 +21,16 @@ struct Room: Codable {
 final class RoomListViewModel: ObservableObject {
     let title: String = "Book Your Room"
 
+    @Published private(set) var rooms: [Room] = []
+
+    // MARK: - Load Rooms
+
     func loadRooms() async {
         let roomsEndPoint = URL(string: "https://wetransfer.github.io/rooms.json")!
         do {
             let (jsondata, _) = try await URLSession.shared.data(from: roomsEndPoint)
-            let rooms = try JSONDecoder().decode(RoomsResponse.self, from: jsondata)
-            print(rooms)
+            let response = try JSONDecoder().decode(RoomsResponse.self, from: jsondata)
+            self.rooms = response.rooms
         }
         catch {
             print(error.localizedDescription)

@@ -10,14 +10,24 @@ import SwiftUI
 struct RoomListView: View {
     @StateObject var viewModel: RoomListViewModel
 
+    private let gridColumns: [GridItem] = [
+        GridItem(.adaptive(minimum: 420))
+    ]
+
+    // MARK: - Build View
+
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 420))]) {
-                    ForEach((0...20), id: \.self) {_ in
-                        Color(.red)
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .frame(height: 300)
+                LazyVGrid(columns: gridColumns) {
+                    ForEach(viewModel.rooms, id: \.name) { room in
+                        ZStack {
+                            Color(.red)
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .frame(height: 300)
+                            Text(room.name)
+                                .font(.largeTitle)
+                        }
                     }
                 }
                 .padding()
