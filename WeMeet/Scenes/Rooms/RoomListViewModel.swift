@@ -25,6 +25,7 @@ final class RoomListViewModel: ObservableObject {
 
     // MARK: - Load Rooms
 
+    @MainActor
     func loadRooms() async {
         let roomsEndPoint = URL(string: "https://wetransfer.github.io/rooms.json")!
         do {
