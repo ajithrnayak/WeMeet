@@ -25,7 +25,9 @@ struct RoomListView: View {
                     spacing: Spacing.multipliedBy(3).value
                 ) {
                     ForEach(viewModel.rooms, id: \.name) { room in
-                        RoomView(room: room)
+                        RoomView(room: room) { bookedRoom in
+                            viewModel.bookRoom(bookedRoom)
+                        }
                     }
                 }
                 .padding()
@@ -41,6 +43,7 @@ struct RoomListView: View {
 
 struct RoomView: View {
     let room: Room
+    var onBookAction: ((Room) -> Void)?
 
     var body: some View {
         VStack(spacing: Spacing.double.value) {
@@ -59,18 +62,19 @@ struct RoomView: View {
                         .font(.title2)
                         .fontWeight(.bold)
 
-                    Text("\(room.spots) spots remaining")
+                    Text(room.remainingSpotsLabel)
                         .font(.body)
-                        .foregroundColor(.accentColor)
+                        .foregroundColor(room.hasRemainingSpots ? .accentColor : .gray)
                 }
 
                 Spacer(minLength: 8)
 
                 Button("Book!") {
-                    print("Book my room tapped!")
+                    onBookAction?(room)
                 }
                 .buttonStyle(PrimaryButton())
                 .fixedSize()
+                .active(if: room.hasRemainingSpots)
             }
             .fixedSize(horizontal: false, vertical: true)
         }

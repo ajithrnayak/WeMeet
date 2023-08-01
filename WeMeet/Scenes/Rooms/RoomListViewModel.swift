@@ -20,6 +20,14 @@ struct Room: Codable, Identifiable {
     var thumbnailURL: URL {
         URL(string: thumbnail)!
     }
+
+    var hasRemainingSpots: Bool {
+        spots > 0
+    }
+
+    var remainingSpotsLabel: String {
+        hasRemainingSpots ? "\(spots) spots remaining" : "No available spots"
+    }
 }
 
 final class RoomListViewModel: ObservableObject {
@@ -48,6 +56,9 @@ final class RoomListViewModel: ObservableObject {
         self.rooms = response.rooms
     }
 
+    func bookRoom(_ room: Room) {
+        print("Room Booking Requested!")
+    }
 }
 
 
