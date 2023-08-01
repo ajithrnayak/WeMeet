@@ -19,6 +19,8 @@
 		F82E2CDF2A78431A000EEC1B /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CDE2A78431A000EEC1B /* RoomListViewModel.swift */; };
 		F82E2CE62A798750000EEC1B /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CE52A798750000EEC1B /* AppEnvironment.swift */; };
 		F82E2D022A799A1C000EEC1B /* Logger+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D012A799A1C000EEC1B /* Logger+Custom.swift */; };
+		F82E2D062A799DD9000EEC1B /* SampleDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D052A799DD9000EEC1B /* SampleDataFetcher.swift */; };
+		F82E2D092A799ED5000EEC1B /* Rooms.json in Resources */ = {isa = PBXBuildFile; fileRef = F82E2D082A799ED5000EEC1B /* Rooms.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F82E2CA22A7836B2000EEC1B /* WeMeet-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeMeet-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F82E2CA22A7836B2000EEC1B /* WeMeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeMeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82E2CA52A7836B2000EEC1B /* WeMeetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMeetApp.swift; sourceTree = "<group>"; };
 		F82E2CA92A7836B4000EEC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F82E2CAC2A7836B4000EEC1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -58,6 +60,8 @@
 		F82E2CEA2A79886D000EEC1B /* ProductionConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ProductionConfig.xcconfig; sourceTree = "<group>"; };
 		F82E2CFF2A798E58000EEC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F82E2D012A799A1C000EEC1B /* Logger+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Custom.swift"; sourceTree = "<group>"; };
+		F82E2D052A799DD9000EEC1B /* SampleDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataFetcher.swift; sourceTree = "<group>"; };
+		F82E2D082A799ED5000EEC1B /* Rooms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Rooms.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +102,7 @@
 		F82E2CA32A7836B2000EEC1B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F82E2CA22A7836B2000EEC1B /* WeMeet-Dev.app */,
+				F82E2CA22A7836B2000EEC1B /* WeMeet.app */,
 				F82E2CB72A7836B4000EEC1B /* WeMeetTests.xctest */,
 				F82E2CC12A7836B4000EEC1B /* WeMeetUITests.xctest */,
 			);
@@ -148,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				F82E2CA92A7836B4000EEC1B /* Assets.xcassets */,
+				F82E2D032A799D08000EEC1B /* Development Content */,
 				F82E2CAB2A7836B4000EEC1B /* Preview Content */,
 			);
 			path = Resources;
@@ -182,6 +187,7 @@
 		F82E2CE02A7986DD000EEC1B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F82E2D052A799DD9000EEC1B /* SampleDataFetcher.swift */,
 				F82E2D002A799A00000EEC1B /* Extensions */,
 			);
 			path = Shared;
@@ -214,6 +220,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		F82E2D032A799D08000EEC1B /* Development Content */ = {
+			isa = PBXGroup;
+			children = (
+				F82E2D082A799ED5000EEC1B /* Rooms.json */,
+			);
+			path = "Development Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -231,7 +245,7 @@
 			);
 			name = WeMeet;
 			productName = WeMeet;
-			productReference = F82E2CA22A7836B2000EEC1B /* WeMeet-Dev.app */;
+			productReference = F82E2CA22A7836B2000EEC1B /* WeMeet.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F82E2CB62A7836B4000EEC1B /* WeMeetTests */ = {
@@ -318,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F82E2D092A799ED5000EEC1B /* Rooms.json in Resources */,
 				F82E2CAD2A7836B4000EEC1B /* Preview Assets.xcassets in Resources */,
 				F82E2CAA2A7836B4000EEC1B /* Assets.xcassets in Resources */,
 			);
@@ -351,6 +366,7 @@
 				F82E2CB22A7836B4000EEC1B /* WeMeet.xcdatamodeld in Sources */,
 				F82E2CA62A7836B2000EEC1B /* WeMeetApp.swift in Sources */,
 				F82E2CE62A798750000EEC1B /* AppEnvironment.swift in Sources */,
+				F82E2D062A799DD9000EEC1B /* SampleDataFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,7 +539,8 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajith.xyz.WeMeet.dev;
-				PRODUCT_NAME = "$(TARGET_NAME)-Dev";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -552,7 +569,8 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajith.xyz.WeMeet.dev;
-				PRODUCT_NAME = "$(TARGET_NAME)-Dev";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -713,7 +731,8 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajith.xyz.WeMeet.staging;
-				PRODUCT_NAME = "$(TARGET_NAME)-Staging";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -838,6 +857,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajith.xyz.WeMeet;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -957,6 +977,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajith.xyz.WeMeet;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1076,7 +1097,8 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajith.xyz.WeMeet.staging;
-				PRODUCT_NAME = "$(TARGET_NAME)-Staging";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

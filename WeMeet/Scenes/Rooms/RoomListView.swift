@@ -11,7 +11,7 @@ struct RoomListView: View {
     @StateObject var viewModel: RoomListViewModel
 
     private let gridColumns: [GridItem] = [
-        GridItem(.adaptive(minimum: 420))
+        GridItem(.flexible())
     ]
 
     // MARK: - Build View
@@ -19,7 +19,11 @@ struct RoomListView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: gridColumns) {
+                LazyVGrid(
+                    columns: gridColumns,
+                    alignment: .center,
+                    pinnedViews: [.sectionHeaders]
+                ) {
                     ForEach(viewModel.rooms, id: \.name) { room in
                         ZStack {
                             Color(.red)
@@ -36,7 +40,7 @@ struct RoomListView: View {
         }
         .navigationViewStyle(.stack)
         .task {
-            await viewModel.loadRooms()
+            await viewModel.loadSampleRooms()
         }
     }
 }

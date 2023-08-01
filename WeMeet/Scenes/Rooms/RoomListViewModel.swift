@@ -37,4 +37,13 @@ final class RoomListViewModel: ObservableObject {
             Log.networkActivity.log("Failed to load Rooms! Reason: \(error.localizedDescription)")
         }
     }
+
+    @MainActor
+    func loadSampleRooms() async {
+        let response = await SampleDataFetcher().defaultRooms()
+        self.rooms = response.rooms
+    }
+
 }
+
+
