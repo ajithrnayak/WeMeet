@@ -34,7 +34,7 @@ final class RoomListViewModel: ObservableObject {
             self.rooms = response.rooms
         }
         catch {
-            print(error.localizedDescription)
+            Log.networkActivity.log("Failed to load Rooms! Reason: \(error.localizedDescription)")
         }
     }
 }

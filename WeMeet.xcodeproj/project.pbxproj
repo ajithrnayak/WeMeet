@@ -18,6 +18,7 @@
 		F82E2CDD2A784291000EEC1B /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CDC2A784291000EEC1B /* RoomListView.swift */; };
 		F82E2CDF2A78431A000EEC1B /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CDE2A78431A000EEC1B /* RoomListViewModel.swift */; };
 		F82E2CE62A798750000EEC1B /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CE52A798750000EEC1B /* AppEnvironment.swift */; };
+		F82E2D022A799A1C000EEC1B /* Logger+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D012A799A1C000EEC1B /* Logger+Custom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		F82E2CE92A79885A000EEC1B /* StagingConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StagingConfig.xcconfig; sourceTree = "<group>"; };
 		F82E2CEA2A79886D000EEC1B /* ProductionConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ProductionConfig.xcconfig; sourceTree = "<group>"; };
 		F82E2CFF2A798E58000EEC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F82E2D012A799A1C000EEC1B /* Logger+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Custom.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 		F82E2CE02A7986DD000EEC1B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F82E2D002A799A00000EEC1B /* Extensions */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -201,6 +204,14 @@
 				F82E2CEA2A79886D000EEC1B /* ProductionConfig.xcconfig */,
 			);
 			path = Configurations;
+			sourceTree = "<group>";
+		};
+		F82E2D002A799A00000EEC1B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F82E2D012A799A1C000EEC1B /* Logger+Custom.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F82E2CAF2A7836B4000EEC1B /* Persistence.swift in Sources */,
+				F82E2D022A799A1C000EEC1B /* Logger+Custom.swift in Sources */,
 				F82E2CDD2A784291000EEC1B /* RoomListView.swift in Sources */,
 				F82E2CDF2A78431A000EEC1B /* RoomListViewModel.swift in Sources */,
 				F82E2CB22A7836B4000EEC1B /* WeMeet.xcdatamodeld in Sources */,
