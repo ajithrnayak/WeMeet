@@ -33,11 +33,9 @@ struct RoomListView: View {
                 .padding()
             }
             .navigationTitle(viewModel.title)
+            .loading(if: viewModel.isLoading)
         }
         .navigationViewStyle(.stack)
-        .task {
-            await viewModel.loadSampleRooms()
-        }
     }
 }
 

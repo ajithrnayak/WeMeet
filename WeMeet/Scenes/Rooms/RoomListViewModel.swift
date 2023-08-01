@@ -33,12 +33,30 @@ struct Room: Codable, Identifiable {
 final class RoomListViewModel: ObservableObject {
     let title: String = "Book Your Room"
 
-    @Published private(set) var rooms: [Room] = []
+    @Published private(set) var rooms: [Room]
+    @Published var isLoading: Bool
+
+    // MARK: - Init
+
+    init(rooms: [Room] = [],
+         isLoading: Bool = false) {
+        self.rooms = rooms
+        self.isLoading = isLoading
+        // initiate data refresh without waiting for view to appear
+        loadRooms()
+    }
 
     // MARK: - Load Rooms
+    func loadRooms() {
+        isLoading = true
+        Task { @MainActor in
+            await loadSampleRooms()
+            isLoading = false
+        }
+    }
 
     @MainActor
-    func loadRooms() async {
+    func fetchRooms() async {
         let roomsEndPoint = URL(string: "https://wetransfer.github.io/rooms.json")!
         do {
             let (jsondata, _) = try await URLSession.shared.data(from: roomsEndPoint)

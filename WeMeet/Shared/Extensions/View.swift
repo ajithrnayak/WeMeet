@@ -16,7 +16,7 @@ extension View {
     @ViewBuilder
     func loading(if condition: Bool) -> some View {
         if condition {
-            SwiftUI.ProgressView {
+            ProgressView {
                 Text("Loading...")
                     .font(.body)
                     .foregroundColor(Color.accentColor)
@@ -31,7 +31,7 @@ extension View {
         if condition {
             ZStack {
                 self
-                SwiftUI.ProgressView {
+                ProgressView {
                     Text("Loading...")
                         .font(.body)
                         .foregroundColor(.white)
