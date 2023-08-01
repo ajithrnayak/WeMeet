@@ -22,16 +22,10 @@ struct RoomListView: View {
                 LazyVGrid(
                     columns: gridColumns,
                     alignment: .center,
-                    pinnedViews: [.sectionHeaders]
+                    spacing: Spacing.multipliedBy(3).value
                 ) {
                     ForEach(viewModel.rooms, id: \.name) { room in
-                        ZStack {
-                            Color(.red)
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .frame(height: 300)
-                            Text(room.name)
-                                .font(.largeTitle)
-                        }
+                        RoomView(room: room)
                     }
                 }
                 .padding()
@@ -42,6 +36,80 @@ struct RoomListView: View {
         .task {
             await viewModel.loadSampleRooms()
         }
+    }
+}
+
+struct RoomView: View {
+    let room: Room
+
+    var body: some View {
+        VStack {
+            AsyncImage(
+                url: room.thumbnailURL,
+                transaction: .init(animation: .spring())
+            ) {
+                handleAsyncImagePhase($0)
+            }
+            .frame(width: .infinity, height: 220)
+            .mask(RoundedRectangle(cornerRadius: CornerRadius.grids))
+
+            HStack(alignment: .center) {
+                VStack(alignment: .leading, spacing: Spacing.half.value) {
+                    Text("\(room.name)")
+                        .font(.title2)
+                        .fontWeight(.bold)
+
+                    Text("\(room.spots) spots remaining")
+                        .font(.body)
+                        .foregroundColor(.accentColor)
+                }
+
+                Spacer(minLength: 8)
+
+                Button("Book") {
+                    print("Book my room tapped!")
+                }
+            }
+            .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+
+    @ViewBuilder
+    private func handleAsyncImagePhase(_ phase: AsyncImagePhase) -> some View {
+        switch phase {
+        case .empty:
+            Color.gray
+                .opacity(0.2)
+                .transition(.opacity.combined(with: .scale))
+
+        case .success(let image):
+            image
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .transition(.opacity.combined(with: .scale))
+
+        case .failure(let error):
+            ErrorView(error)
+
+        @unknown default:
+            ErrorView()
+        }
+    }
+}
+
+struct ErrorView: View {
+    var error: Error?
+
+    private var errorDescr: String {
+        return error?.localizedDescription ?? "Error Occurred"
+    }
+
+    init(_ error: Error? = nil) {
+        self.error = error
+    }
+
+    var body: some View {
+        Text(errorDescr)
     }
 }
 

@@ -16,6 +16,10 @@ struct Room: Codable, Identifiable {
     let name: String
     let spots: Int
     let thumbnail: String
+
+    var thumbnailURL: URL {
+        URL(string: thumbnail)!
+    }
 }
 
 final class RoomListViewModel: ObservableObject {
