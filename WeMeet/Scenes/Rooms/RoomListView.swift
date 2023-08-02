@@ -18,25 +18,56 @@ struct RoomListView: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVGrid(
-                    columns: gridColumns,
-                    alignment: .center,
-                    spacing: Spacing.multipliedBy(3).value
-                ) {
-                    ForEach(viewModel.rooms, id: \.name) { room in
-                        RoomView(room: room) { bookedRoom in
-                            viewModel.bookRoom(bookedRoom)
+            ZStack {
+                ScrollView {
+                    LazyVGrid(
+                        columns: gridColumns,
+                        alignment: .center,
+                        spacing: Spacing.multipliedBy(3).value
+                    ) {
+                        ForEach(viewModel.rooms, id: \.name) { room in
+                            RoomView(room: room) { bookedRoom in
+                                viewModel.bookRoom(bookedRoom)
+                            }
                         }
                     }
+                    .padding()
                 }
-                .padding()
+                .navigationTitle(viewModel.title)
+                .loading(if: viewModel.isLoading)
+                .alert(isPresented: $viewModel.isAlertVisible) {
+                    if let config = viewModel.alertConfig {
+                        return Alert(
+                            title: Text(config.title),
+                            message: Text(config.message),
+                            dismissButton: .default(Text("Ok"))
+                        )
+                    } else {
+                        return Alert(title: Text("Something Wrong!"))
+                    }
+                }
+
+                if viewModel.showLoadingOverlay {
+                    loadingOverlay
+                }
             }
-            .navigationTitle(viewModel.title)
-            .loading(if: viewModel.isLoading)
-            .loadingOverlay(if: viewModel.showLoadingOverlay)
         }
         .navigationViewStyle(.stack)
+    }
+
+    // MARK: - View Builders
+    
+    @ViewBuilder
+    var loadingOverlay: some View {
+        ProgressView {
+            Text("Loading...")
+                .font(.body)
+                .foregroundColor(.white)
+        }
+        .progressViewStyle(CircularProgressViewStyle())
+        .tint(.white)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black.opacity(0.5))
     }
 }
 

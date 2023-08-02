@@ -29,17 +29,18 @@ extension View {
     @ViewBuilder
     func loadingOverlay(if condition: Bool) -> some View {
         if condition {
-            ZStack {
-                self
-                ProgressView {
-                    Text("Loading...")
-                        .font(.body)
-                        .foregroundColor(.white)
+            self
+                .overlay {
+                    ProgressView {
+                        Text("Loading...")
+                            .font(.body)
+                            .foregroundColor(.white)
+                    }
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .tint(.white)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.black.opacity(0.5))
                 }
-                .tint(.white)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color.black.opacity(0.5))
-            }
         } else {
             self
         }

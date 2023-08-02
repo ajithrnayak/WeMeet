@@ -14,5 +14,7 @@ extension Logger {
     /// Using your bundle identifier is a great way to ensure a unique identifier.
     private static var subsystem = Bundle.main.bundleIdentifier!
 
+    static let userActivity = Logger(subsystem: subsystem, category: "userActivity")
+
     static let networkActivity = Logger(subsystem: subsystem, category: "networkActivity")
 }
