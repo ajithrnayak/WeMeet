@@ -19,7 +19,7 @@ extension View {
             ProgressView {
                 Text("Loading...")
                     .font(.body)
-                    .foregroundColor(Color.accentColor)
+                    .foregroundColor(.gray)
             }
         } else {
             self

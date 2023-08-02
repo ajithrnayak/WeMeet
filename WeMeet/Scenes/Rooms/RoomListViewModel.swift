@@ -30,6 +30,16 @@ struct Room: Codable, Identifiable {
     }
 }
 
+extension Room {
+    static var example: Room {
+        Room(
+            name: "Taj Mahal",
+            spots: 1,
+            thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Taj-Mahal.jpg/1600px-Taj-Mahal.jpg"
+        )
+    }
+}
+
 final class RoomListViewModel: ObservableObject {
     let title: String = "Book Your Room"
 
@@ -85,4 +95,9 @@ final class RoomListViewModel: ObservableObject {
     }
 }
 
-
+extension RoomListViewModel {
+    static var example: RoomListViewModel {
+        let response: RoomsResponse = load("Rooms.json")
+        return RoomListViewModel(rooms: response.rooms)
+    }
+}

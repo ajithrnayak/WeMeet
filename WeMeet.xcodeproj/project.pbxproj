@@ -25,6 +25,7 @@
 		F82E2D0E2A79AC95000EEC1B /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D0D2A79AC95000EEC1B /* CornerRadius.swift */; };
 		F82E2D112A79ADA4000EEC1B /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D102A79ADA4000EEC1B /* PrimaryButtonStyle.swift */; };
 		F82E2D132A79B2E0000EEC1B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D122A79B2E0000EEC1B /* View.swift */; };
+		F82E2D162A7ACBCA000EEC1B /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D152A7ACBCA000EEC1B /* RoomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		F82E2D0D2A79AC95000EEC1B /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		F82E2D102A79ADA4000EEC1B /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		F82E2D122A79B2E0000EEC1B /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		F82E2D152A7ACBCA000EEC1B /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 		F82E2CDB2A784270000EEC1B /* Rooms */ = {
 			isa = PBXGroup;
 			children = (
+				F82E2D142A7ACBAE000EEC1B /* Views */,
 				F82E2CDC2A784291000EEC1B /* RoomListView.swift */,
 				F82E2CDE2A78431A000EEC1B /* RoomListViewModel.swift */,
 			);
@@ -254,6 +257,14 @@
 				F82E2D102A79ADA4000EEC1B /* PrimaryButtonStyle.swift */,
 			);
 			path = ButtonStyles;
+			sourceTree = "<group>";
+		};
+		F82E2D142A7ACBAE000EEC1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F82E2D152A7ACBCA000EEC1B /* RoomView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +408,7 @@
 				F82E2CB22A7836B4000EEC1B /* WeMeet.xcdatamodeld in Sources */,
 				F82E2D132A79B2E0000EEC1B /* View.swift in Sources */,
 				F82E2CA62A7836B2000EEC1B /* WeMeetApp.swift in Sources */,
+				F82E2D162A7ACBCA000EEC1B /* RoomView.swift in Sources */,
 				F82E2CE62A798750000EEC1B /* AppEnvironment.swift in Sources */,
 				F82E2D062A799DD9000EEC1B /* SampleDataFetcher.swift in Sources */,
 			);
