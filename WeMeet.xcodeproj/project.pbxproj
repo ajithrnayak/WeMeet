@@ -27,6 +27,11 @@
 		F82E2D132A79B2E0000EEC1B /* View+Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D122A79B2E0000EEC1B /* View+Modifiers.swift */; };
 		F82E2D162A7ACBCA000EEC1B /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D152A7ACBCA000EEC1B /* RoomView.swift */; };
 		F845C5F82A7BBCCB00D2C9C7 /* FetchedResultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C5F72A7BBCCB00D2C9C7 /* FetchedResultsStore.swift */; };
+		F845C5FB2A7BC3B400D2C9C7 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C5FA2A7BC3B400D2C9C7 /* NetworkClient.swift */; };
+		F845C5FE2A7BC49300D2C9C7 /* StoreRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C5FD2A7BC49300D2C9C7 /* StoreRepresentable.swift */; };
+		F845C6012A7BC4CF00D2C9C7 /* EndpointConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C6002A7BC4CF00D2C9C7 /* EndpointConfigurable.swift */; };
+		F845C6032A7BC4FB00D2C9C7 /* RoomsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C6022A7BC4FB00D2C9C7 /* RoomsStore.swift */; };
+		F845C6052A7BC51300D2C9C7 /* RoomsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C6042A7BC51300D2C9C7 /* RoomsEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +79,11 @@
 		F82E2D122A79B2E0000EEC1B /* View+Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modifiers.swift"; sourceTree = "<group>"; };
 		F82E2D152A7ACBCA000EEC1B /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
 		F845C5F72A7BBCCB00D2C9C7 /* FetchedResultsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedResultsStore.swift; sourceTree = "<group>"; };
+		F845C5FA2A7BC3B400D2C9C7 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		F845C5FD2A7BC49300D2C9C7 /* StoreRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRepresentable.swift; sourceTree = "<group>"; };
+		F845C6002A7BC4CF00D2C9C7 /* EndpointConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointConfigurable.swift; sourceTree = "<group>"; };
+		F845C6022A7BC4FB00D2C9C7 /* RoomsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsStore.swift; sourceTree = "<group>"; };
+		F845C6042A7BC51300D2C9C7 /* RoomsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +139,7 @@
 				F82E2CE42A798738000EEC1B /* Environment */,
 				F82E2CD62A784168000EEC1B /* Scenes */,
 				F82E2CE02A7986DD000EEC1B /* Shared */,
+				F845C5F92A7BC36900D2C9C7 /* Networking */,
 				F82E2CD52A783964000EEC1B /* Persistence */,
 				F82E2CD42A783942000EEC1B /* Resources */,
 			);
@@ -270,6 +281,34 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F845C5F92A7BC36900D2C9C7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F845C5FA2A7BC3B400D2C9C7 /* NetworkClient.swift */,
+				F845C5FF2A7BC4A600D2C9C7 /* Endpoints */,
+				F845C5FC2A7BC44000D2C9C7 /* Stores */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F845C5FC2A7BC44000D2C9C7 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				F845C5FD2A7BC49300D2C9C7 /* StoreRepresentable.swift */,
+				F845C6022A7BC4FB00D2C9C7 /* RoomsStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		F845C5FF2A7BC4A600D2C9C7 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				F845C6002A7BC4CF00D2C9C7 /* EndpointConfigurable.swift */,
+				F845C6042A7BC51300D2C9C7 /* RoomsEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -405,13 +444,18 @@
 				F82E2D022A799A1C000EEC1B /* Logger+Custom.swift in Sources */,
 				F82E2D112A79ADA4000EEC1B /* PrimaryButtonStyle.swift in Sources */,
 				F82E2D0E2A79AC95000EEC1B /* CornerRadius.swift in Sources */,
+				F845C6032A7BC4FB00D2C9C7 /* RoomsStore.swift in Sources */,
+				F845C6052A7BC51300D2C9C7 /* RoomsEndpoint.swift in Sources */,
+				F845C6012A7BC4CF00D2C9C7 /* EndpointConfigurable.swift in Sources */,
 				F82E2D0C2A79AAAF000EEC1B /* Spacing.swift in Sources */,
 				F82E2CDD2A784291000EEC1B /* RoomListView.swift in Sources */,
 				F82E2CDF2A78431A000EEC1B /* RoomListViewModel.swift in Sources */,
 				F82E2CB22A7836B4000EEC1B /* WeMeet.xcdatamodeld in Sources */,
+				F845C5FB2A7BC3B400D2C9C7 /* NetworkClient.swift in Sources */,
 				F845C5F82A7BBCCB00D2C9C7 /* FetchedResultsStore.swift in Sources */,
 				F82E2D132A79B2E0000EEC1B /* View+Modifiers.swift in Sources */,
 				F82E2CA62A7836B2000EEC1B /* WeMeetApp.swift in Sources */,
+				F845C5FE2A7BC49300D2C9C7 /* StoreRepresentable.swift in Sources */,
 				F82E2D162A7ACBCA000EEC1B /* RoomView.swift in Sources */,
 				F82E2CE62A798750000EEC1B /* AppEnvironment.swift in Sources */,
 				F82E2D062A799DD9000EEC1B /* SampleDataFetcher.swift in Sources */,

@@ -7,6 +7,10 @@
 
 import CoreData
 
+public enum PersistenceStoreError: Error {
+    case saveFailed(Error)
+}
+
 public class PersistenceStore {
     public static let shared = PersistenceStore()
     public let container: NSPersistentContainer
