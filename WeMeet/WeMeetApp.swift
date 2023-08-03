@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct WeMeetApp: App {
-    let persistenceController = PersistenceController.shared
+    let persistenceController = PersistenceStore.shared
 
     var body: some Scene {
         WindowGroup {

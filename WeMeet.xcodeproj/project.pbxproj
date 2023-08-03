@@ -10,7 +10,7 @@
 		F82E2CA62A7836B2000EEC1B /* WeMeetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CA52A7836B2000EEC1B /* WeMeetApp.swift */; };
 		F82E2CAA2A7836B4000EEC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82E2CA92A7836B4000EEC1B /* Assets.xcassets */; };
 		F82E2CAD2A7836B4000EEC1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82E2CAC2A7836B4000EEC1B /* Preview Assets.xcassets */; };
-		F82E2CAF2A7836B4000EEC1B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CAE2A7836B4000EEC1B /* Persistence.swift */; };
+		F82E2CAF2A7836B4000EEC1B /* PersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CAE2A7836B4000EEC1B /* PersistenceStore.swift */; };
 		F82E2CB22A7836B4000EEC1B /* WeMeet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CB02A7836B4000EEC1B /* WeMeet.xcdatamodeld */; };
 		F82E2CBC2A7836B4000EEC1B /* WeMeetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CBB2A7836B4000EEC1B /* WeMeetTests.swift */; };
 		F82E2CC62A7836B4000EEC1B /* WeMeetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2CC52A7836B4000EEC1B /* WeMeetUITests.swift */; };
@@ -50,7 +50,7 @@
 		F82E2CA52A7836B2000EEC1B /* WeMeetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMeetApp.swift; sourceTree = "<group>"; };
 		F82E2CA92A7836B4000EEC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F82E2CAC2A7836B4000EEC1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F82E2CAE2A7836B4000EEC1B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		F82E2CAE2A7836B4000EEC1B /* PersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceStore.swift; sourceTree = "<group>"; };
 		F82E2CB12A7836B4000EEC1B /* WeMeet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeMeet.xcdatamodel; sourceTree = "<group>"; };
 		F82E2CB72A7836B4000EEC1B /* WeMeetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeMeetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82E2CBB2A7836B4000EEC1B /* WeMeetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMeetTests.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		F82E2CD52A783964000EEC1B /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				F82E2CAE2A7836B4000EEC1B /* Persistence.swift */,
+				F82E2CAE2A7836B4000EEC1B /* PersistenceStore.swift */,
 				F82E2CB02A7836B4000EEC1B /* WeMeet.xcdatamodeld */,
 			);
 			path = Persistence;
@@ -398,7 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F82E2CAF2A7836B4000EEC1B /* Persistence.swift in Sources */,
+				F82E2CAF2A7836B4000EEC1B /* PersistenceStore.swift in Sources */,
 				F82E2D022A799A1C000EEC1B /* Logger+Custom.swift in Sources */,
 				F82E2D112A79ADA4000EEC1B /* PrimaryButtonStyle.swift in Sources */,
 				F82E2D0E2A79AC95000EEC1B /* CornerRadius.swift in Sources */,
