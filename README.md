@@ -4,6 +4,9 @@
 - Demonstrate the use of SwiftUI + MVVM + CoreData + Async/await.
 - Supports iOS 16.4+
 
+## 
+
+https://github.com/ajithrnayak/WeMeet/assets/3415400/b7b811d6-573a-4da7-9227-66dfdc2a902c
 
 ## Acceptance Criteria 
 
