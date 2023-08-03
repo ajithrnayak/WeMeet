@@ -26,6 +26,7 @@
 		F82E2D112A79ADA4000EEC1B /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D102A79ADA4000EEC1B /* PrimaryButtonStyle.swift */; };
 		F82E2D132A79B2E0000EEC1B /* View+Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D122A79B2E0000EEC1B /* View+Modifiers.swift */; };
 		F82E2D162A7ACBCA000EEC1B /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E2D152A7ACBCA000EEC1B /* RoomView.swift */; };
+		F845C5F82A7BBCCB00D2C9C7 /* FetchedResultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C5F72A7BBCCB00D2C9C7 /* FetchedResultsStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		F82E2D102A79ADA4000EEC1B /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		F82E2D122A79B2E0000EEC1B /* View+Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modifiers.swift"; sourceTree = "<group>"; };
 		F82E2D152A7ACBCA000EEC1B /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
+		F845C5F72A7BBCCB00D2C9C7 /* FetchedResultsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedResultsStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				F82E2CAE2A7836B4000EEC1B /* PersistenceStore.swift */,
+				F845C5F72A7BBCCB00D2C9C7 /* FetchedResultsStore.swift */,
 				F82E2CB02A7836B4000EEC1B /* WeMeet.xcdatamodeld */,
 			);
 			path = Persistence;
@@ -406,6 +409,7 @@
 				F82E2CDD2A784291000EEC1B /* RoomListView.swift in Sources */,
 				F82E2CDF2A78431A000EEC1B /* RoomListViewModel.swift in Sources */,
 				F82E2CB22A7836B4000EEC1B /* WeMeet.xcdatamodeld in Sources */,
+				F845C5F82A7BBCCB00D2C9C7 /* FetchedResultsStore.swift in Sources */,
 				F82E2D132A79B2E0000EEC1B /* View+Modifiers.swift in Sources */,
 				F82E2CA62A7836B2000EEC1B /* WeMeetApp.swift in Sources */,
 				F82E2D162A7ACBCA000EEC1B /* RoomView.swift in Sources */,
