@@ -21,7 +21,17 @@ public final class RoomsStore: StoreRepresentable {
         self.persistenceStore = persistenceStore
     }
 
-    public func fetchRooms() {
+    public func fetchMeetingRooms() async throws {
+        let response: RoomsResponse = try await networkClient.performDataRequest(
+            .meetingRoomsList
+        )
+        // todo: save in db
+    }
 
+    public func performRoomBooking(for roomID: String) async throws -> Bool {
+        let response: BookRoomResponse = try await networkClient.performDataRequest(
+            .bookRoom(roomID: roomID)
+        )
+        return response.success
     }
 }

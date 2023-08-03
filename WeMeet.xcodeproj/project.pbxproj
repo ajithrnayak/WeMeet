@@ -32,6 +32,8 @@
 		F845C6012A7BC4CF00D2C9C7 /* EndpointConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C6002A7BC4CF00D2C9C7 /* EndpointConfigurable.swift */; };
 		F845C6032A7BC4FB00D2C9C7 /* RoomsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C6022A7BC4FB00D2C9C7 /* RoomsStore.swift */; };
 		F845C6052A7BC51300D2C9C7 /* RoomsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C6042A7BC51300D2C9C7 /* RoomsEndpoint.swift */; };
+		F845C6082A7BD60D00D2C9C7 /* RoomsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C6072A7BD60D00D2C9C7 /* RoomsResponse.swift */; };
+		F845C60A2A7BD88400D2C9C7 /* BookRoomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C6092A7BD88400D2C9C7 /* BookRoomResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		F845C6002A7BC4CF00D2C9C7 /* EndpointConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointConfigurable.swift; sourceTree = "<group>"; };
 		F845C6022A7BC4FB00D2C9C7 /* RoomsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsStore.swift; sourceTree = "<group>"; };
 		F845C6042A7BC51300D2C9C7 /* RoomsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsEndpoint.swift; sourceTree = "<group>"; };
+		F845C6072A7BD60D00D2C9C7 /* RoomsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsResponse.swift; sourceTree = "<group>"; };
+		F845C6092A7BD88400D2C9C7 /* BookRoomResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRoomResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +291,7 @@
 				F845C5FA2A7BC3B400D2C9C7 /* NetworkClient.swift */,
 				F845C5FF2A7BC4A600D2C9C7 /* Endpoints */,
 				F845C5FC2A7BC44000D2C9C7 /* Stores */,
+				F845C6062A7BD5F100D2C9C7 /* Responses */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -307,6 +312,15 @@
 				F845C6042A7BC51300D2C9C7 /* RoomsEndpoint.swift */,
 			);
 			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		F845C6062A7BD5F100D2C9C7 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				F845C6072A7BD60D00D2C9C7 /* RoomsResponse.swift */,
+				F845C6092A7BD88400D2C9C7 /* BookRoomResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,12 +465,14 @@
 				F82E2CDD2A784291000EEC1B /* RoomListView.swift in Sources */,
 				F82E2CDF2A78431A000EEC1B /* RoomListViewModel.swift in Sources */,
 				F82E2CB22A7836B4000EEC1B /* WeMeet.xcdatamodeld in Sources */,
+				F845C60A2A7BD88400D2C9C7 /* BookRoomResponse.swift in Sources */,
 				F845C5FB2A7BC3B400D2C9C7 /* NetworkClient.swift in Sources */,
 				F845C5F82A7BBCCB00D2C9C7 /* FetchedResultsStore.swift in Sources */,
 				F82E2D132A79B2E0000EEC1B /* View+Modifiers.swift in Sources */,
 				F82E2CA62A7836B2000EEC1B /* WeMeetApp.swift in Sources */,
 				F845C5FE2A7BC49300D2C9C7 /* StoreRepresentable.swift in Sources */,
 				F82E2D162A7ACBCA000EEC1B /* RoomView.swift in Sources */,
+				F845C6082A7BD60D00D2C9C7 /* RoomsResponse.swift in Sources */,
 				F82E2CE62A798750000EEC1B /* AppEnvironment.swift in Sources */,
 				F82E2D062A799DD9000EEC1B /* SampleDataFetcher.swift in Sources */,
 			);

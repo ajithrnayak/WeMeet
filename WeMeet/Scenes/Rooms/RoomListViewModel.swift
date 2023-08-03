@@ -7,14 +7,6 @@
 
 import Foundation
 
-struct RoomsResponse: Decodable {
-    let rooms: [Room]
-}
-
-struct BookRoomResponse: Codable {
-    let success: Bool
-}
-
 struct Room: Codable, Identifiable {
     var id: String { name }
     let name: String

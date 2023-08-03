@@ -9,7 +9,7 @@ import Foundation
 
 public enum RoomsEndpoint: EndpointConfigurable {
     case meetingRoomsList
-    case bookRoom(name: String)
+    case bookRoom(roomID: String)
     
     public var baseURL: URL {
         return AppEnvironment.current.baseURL
