@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 struct AlertConfig {
     let title: String
@@ -24,6 +25,9 @@ final class RoomListViewModel: ObservableObject {
 
     private let roomsStore: RoomsStore = RoomsStore()
 
+    private var fetchedResults: FetchedResultsStore<Room>?
+    private var cancelBag = Set<AnyCancellable>()
+
     // MARK: - Init
 
     init(rooms: [Room] = [],
@@ -41,12 +45,23 @@ final class RoomListViewModel: ObservableObject {
     }
 
     // MARK: - Load Rooms
+
     func loadRooms() {
-        isLoading = true
-        Task { @MainActor in
-            //await loadSampleRooms()
-            isLoading = false
-        }
+        let context = PersistenceStore.shared.mainQueueContext
+        fetchedResults = FetchedResultsStore(
+            context: context,
+            fetchRequest: Room.roomsFetchRequest()
+        )
+        subscribeToFetchedResults()
+    }
+
+    private func subscribeToFetchedResults() {
+        fetchedResults?.$objects
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { rooms in
+                self.rooms = rooms
+            })
+            .store(in: &cancelBag)
     }
 
     func fetchRooms() {

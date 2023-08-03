@@ -56,5 +56,13 @@ public extension Room {
     static var example: Room {
         Room()
     }
+
+    static func roomsFetchRequest() -> NSFetchRequest<Room> {
+        let fetchRequest: NSFetchRequest<Room> = Room.fetchRequest()
+        fetchRequest.includesPendingChanges = true
+        fetchRequest.fetchBatchSize = PersistenceStore.defaultBatchSize
+        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Room.name, ascending: false)]
+        return fetchRequest
+    }
 }
 

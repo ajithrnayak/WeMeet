@@ -22,15 +22,17 @@ public final class RoomsStore: StoreRepresentable {
     }
 
     public func fetchMeetingRooms() async throws {
+        // first prepare context & decoder
         let taskContext = persistenceStore.makeBackgroundTaskContext()
         let decoder = JSONDecoder()
         decoder.userInfo[CodingUserInfoKey.managedObjectContext] = taskContext
-
+        // fetch and parse response
         let response: RoomsResponse = try await networkClient.performDataRequest(
             .meetingRoomsList, decoder: decoder
         )
-        Log.networkActivity.info("Meeting Rooms:\(String(describing: response))")
+        // save context
         persistenceStore.saveContext(taskContext)
+        Log.networkActivity.info("Meeting Rooms:\(String(describing: response))")
     }
 
     public func performRoomBooking(for roomID: String) async throws -> Bool {

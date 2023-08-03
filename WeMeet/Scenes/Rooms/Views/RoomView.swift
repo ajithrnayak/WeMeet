@@ -83,7 +83,11 @@ struct ErrorView: View {
     }
 
     var body: some View {
-        Text(errorDescr)
+        ZStack {
+            Color.gray
+                .opacity(0.2)
+            Text(errorDescr)
+        }
     }
 }
 
