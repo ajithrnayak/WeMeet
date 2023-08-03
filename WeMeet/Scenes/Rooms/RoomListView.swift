@@ -33,6 +33,9 @@ struct RoomListView: View {
                     }
                     .padding()
                 }
+                .refreshable {
+                    await viewModel.refreshRooms()
+                }
                 .navigationTitle(viewModel.title)
                 .loading(if: viewModel.isLoading)
                 .alert(isPresented: $viewModel.isAlertVisible) {

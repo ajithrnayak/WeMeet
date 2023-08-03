@@ -64,6 +64,10 @@ final class RoomListViewModel: ObservableObject {
             .store(in: &cancelBag)
     }
 
+    func refreshRooms() async {
+        try? await roomsStore.fetchMeetingRooms()
+    }
+
     func fetchRooms() {
         Task {
             do {
