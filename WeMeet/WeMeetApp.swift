@@ -9,13 +9,15 @@ import SwiftUI
 
 @main
 struct WeMeetApp: App {
-    let persistenceController = PersistenceStore.shared
+    let persistenceStore = PersistenceStore.shared
 
     var body: some Scene {
         WindowGroup {
             RoomListView(viewModel: RoomListViewModel())
-                .environment(\.managedObjectContext,
-                              persistenceController.container.viewContext)
+                .environment(
+                    \.managedObjectContext,
+                     persistenceStore.mainQueueContext
+                )
         }
     }
 }
