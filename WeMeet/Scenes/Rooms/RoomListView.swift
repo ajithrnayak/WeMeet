@@ -59,7 +59,7 @@ struct RoomListView: View {
     }
 
     // MARK: - View Builders
-    
+
     @ViewBuilder
     var loadingOverlay: some View {
         ProgressView {

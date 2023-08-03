@@ -58,7 +58,7 @@ public enum AppEnvironment: String {
 // MARK: - Remote URLs
 
 extension AppEnvironment {
-    
+
     var baseURL: URL {
         switch self {
         case .development:

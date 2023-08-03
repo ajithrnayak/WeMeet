@@ -83,10 +83,10 @@ public extension PersistenceStore {
         guard context.hasChanges else {
             return
         }
-        
+
         do {
             try context.save()
-            if (mergeToParent && context.parent != nil) {
+            if mergeToParent && context.parent != nil {
                 try context.parent?.save()
             }
         } catch {
@@ -106,7 +106,7 @@ public extension PersistenceStore {
                     changes(context)
 
                     try context.save()
-                    if (mergeToParent && context.parent != nil) {
+                    if mergeToParent && context.parent != nil {
                         try context.parent?.save()
                     }
                 }

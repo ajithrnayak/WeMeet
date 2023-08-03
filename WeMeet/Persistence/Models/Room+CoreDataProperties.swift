@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension Room {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Room> {
@@ -23,6 +22,6 @@ extension Room {
 
 }
 
-extension Room : Identifiable {
+extension Room: Identifiable {
 
 }

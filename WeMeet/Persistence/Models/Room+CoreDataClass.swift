@@ -65,4 +65,3 @@ public extension Room {
         return fetchRequest
     }
 }
-

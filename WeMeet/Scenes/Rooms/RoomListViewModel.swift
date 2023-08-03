@@ -21,7 +21,7 @@ final class RoomListViewModel: ObservableObject {
     @Published var showLoadingOverlay: Bool
     @Published var isAlertVisible: Bool
 
-    var alertConfig: AlertConfig? = nil
+    var alertConfig: AlertConfig?
 
     private let roomsStore: RoomsStore = RoomsStore()
 
@@ -72,8 +72,7 @@ final class RoomListViewModel: ObservableObject {
         Task {
             do {
                 try await roomsStore.fetchMeetingRooms()
-            }
-            catch {
+            } catch {
                 Log.networkActivity.error("Failed to fetch Rooms! Reason: \(error.localizedDescription)")
             }
         }
@@ -93,8 +92,7 @@ final class RoomListViewModel: ObservableObject {
                 let isBookingSuccess = try await requestRoomBooking()
                 showLoadingOverlay = false
                 handleRoomBookingStatus(isBookingSuccess)
-            }
-            catch {
+            } catch {
                 Log.networkActivity.error("Booking Failed! \(error.localizedDescription)")
                 showLoadingOverlay = false
                 handleRoomBookingStatus(false)
