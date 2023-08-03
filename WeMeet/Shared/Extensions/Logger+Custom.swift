@@ -16,5 +16,7 @@ extension Logger {
 
     static let userActivity = Logger(subsystem: subsystem, category: "userActivity")
 
+    static let dbActivity = Logger(subsystem: subsystem, category: "databaseActivity")
+
     static let networkActivity = Logger(subsystem: subsystem, category: "networkActivity")
 }
