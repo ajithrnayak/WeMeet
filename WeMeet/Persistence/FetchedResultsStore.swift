@@ -18,16 +18,8 @@ final class FetchedResultsStore<Object: NSManagedObject>:
 
     init(
         context: NSManagedObjectContext,
-        predicate: NSPredicate?,
-        sort: [NSSortDescriptor]?
+        fetchRequest: NSFetchRequest<Object>
     ) {
-        // make fetch request
-        let fetchRequest = NSFetchRequest<Object>(entityName: Object.entityName)
-        fetchRequest.includesPendingChanges = true
-        fetchRequest.fetchBatchSize = PersistenceStore.defaultBatchSize
-        fetchRequest.predicate = predicate
-        fetchRequest.sortDescriptors = sort
-
         // make fetched Results Controller
         fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest, managedObjectContext: context,

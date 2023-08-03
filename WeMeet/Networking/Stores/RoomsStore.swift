@@ -14,18 +14,23 @@ public final class RoomsStore: StoreRepresentable {
     public var persistenceStore: PersistenceStore
 
     public init(
-        networkClient: NetworkClient<RoomsEndpoint>,
-        persistenceStore: PersistenceStore
+        networkClient: NetworkClient<RoomsEndpoint> = NetworkClient<RoomsEndpoint>(),
+        persistenceStore: PersistenceStore = PersistenceStore.shared
     ) {
         self.networkClient = networkClient
         self.persistenceStore = persistenceStore
     }
 
     public func fetchMeetingRooms() async throws {
+        let taskContext = persistenceStore.makeBackgroundTaskContext()
+        let decoder = JSONDecoder()
+        decoder.userInfo[CodingUserInfoKey.managedObjectContext] = taskContext
+
         let response: RoomsResponse = try await networkClient.performDataRequest(
-            .meetingRoomsList
+            .meetingRoomsList, decoder: decoder
         )
-        // todo: save in db
+        Log.networkActivity.info("Meeting Rooms:\(String(describing: response))")
+        persistenceStore.saveContext(taskContext)
     }
 
     public func performRoomBooking(for roomID: String) async throws -> Bool {

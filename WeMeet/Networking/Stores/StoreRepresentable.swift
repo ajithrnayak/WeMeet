@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ Use to configure a store that handles fetching data from network and persisting it in db
+ */
 public protocol StoreRepresentable {
     associatedtype Endpoint: EndpointConfigurable
 

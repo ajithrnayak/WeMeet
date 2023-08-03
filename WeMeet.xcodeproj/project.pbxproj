@@ -34,6 +34,8 @@
 		F845C6052A7BC51300D2C9C7 /* RoomsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C6042A7BC51300D2C9C7 /* RoomsEndpoint.swift */; };
 		F845C6082A7BD60D00D2C9C7 /* RoomsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C6072A7BD60D00D2C9C7 /* RoomsResponse.swift */; };
 		F845C60A2A7BD88400D2C9C7 /* BookRoomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C6092A7BD88400D2C9C7 /* BookRoomResponse.swift */; };
+		F845C6162A7BE2FE00D2C9C7 /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C6142A7BE2FE00D2C9C7 /* Room+CoreDataClass.swift */; };
+		F845C6172A7BE2FE00D2C9C7 /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845C6152A7BE2FE00D2C9C7 /* Room+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		F845C6042A7BC51300D2C9C7 /* RoomsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsEndpoint.swift; sourceTree = "<group>"; };
 		F845C6072A7BD60D00D2C9C7 /* RoomsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsResponse.swift; sourceTree = "<group>"; };
 		F845C6092A7BD88400D2C9C7 /* BookRoomResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRoomResponse.swift; sourceTree = "<group>"; };
+		F845C6142A7BE2FE00D2C9C7 /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F845C6152A7BE2FE00D2C9C7 /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,7 @@
 		F82E2CD52A783964000EEC1B /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				F845C60F2A7BE0A300D2C9C7 /* Models */,
 				F82E2CAE2A7836B4000EEC1B /* PersistenceStore.swift */,
 				F845C5F72A7BBCCB00D2C9C7 /* FetchedResultsStore.swift */,
 				F82E2CB02A7836B4000EEC1B /* WeMeet.xcdatamodeld */,
@@ -323,6 +328,15 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
+		F845C60F2A7BE0A300D2C9C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F845C6142A7BE2FE00D2C9C7 /* Room+CoreDataClass.swift */,
+				F845C6152A7BE2FE00D2C9C7 /* Room+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -454,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F845C6162A7BE2FE00D2C9C7 /* Room+CoreDataClass.swift in Sources */,
 				F82E2CAF2A7836B4000EEC1B /* PersistenceStore.swift in Sources */,
 				F82E2D022A799A1C000EEC1B /* Logger+Custom.swift in Sources */,
 				F82E2D112A79ADA4000EEC1B /* PrimaryButtonStyle.swift in Sources */,
@@ -461,6 +476,7 @@
 				F845C6032A7BC4FB00D2C9C7 /* RoomsStore.swift in Sources */,
 				F845C6052A7BC51300D2C9C7 /* RoomsEndpoint.swift in Sources */,
 				F845C6012A7BC4CF00D2C9C7 /* EndpointConfigurable.swift in Sources */,
+				F845C6172A7BE2FE00D2C9C7 /* Room+CoreDataProperties.swift in Sources */,
 				F82E2D0C2A79AAAF000EEC1B /* Spacing.swift in Sources */,
 				F82E2CDD2A784291000EEC1B /* RoomListView.swift in Sources */,
 				F82E2CDF2A78431A000EEC1B /* RoomListViewModel.swift in Sources */,

@@ -7,35 +7,6 @@
 
 import Foundation
 
-struct Room: Codable, Identifiable {
-    var id: String { name }
-    let name: String
-    let spots: Int
-    let thumbnail: String
-
-    var thumbnailURL: URL {
-        URL(string: thumbnail)!
-    }
-
-    var hasRemainingSpots: Bool {
-        spots > 0
-    }
-
-    var remainingSpotsLabel: String {
-        hasRemainingSpots ? "\(spots) spots remaining" : "No available spots"
-    }
-}
-
-extension Room {
-    static var example: Room {
-        Room(
-            name: "Taj Mahal",
-            spots: 1,
-            thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Taj-Mahal.jpg/1600px-Taj-Mahal.jpg"
-        )
-    }
-}
-
 struct AlertConfig {
     let title: String
     let message: String
@@ -51,6 +22,8 @@ final class RoomListViewModel: ObservableObject {
 
     var alertConfig: AlertConfig? = nil
 
+    private let roomsStore: RoomsStore = RoomsStore()
+
     // MARK: - Init
 
     init(rooms: [Room] = [],
@@ -61,29 +34,29 @@ final class RoomListViewModel: ObservableObject {
         self.isLoading = isLoading
         self.showLoadingOverlay = showLoadingOverlay
         self.isAlertVisible = isAlertVisible
-        // initiate data refresh without waiting for view to appear
+        // load data from db first
         loadRooms()
+        // then, initiate data refresh without waiting for view to appear
+        fetchRooms()
     }
 
     // MARK: - Load Rooms
     func loadRooms() {
         isLoading = true
         Task { @MainActor in
-            await loadSampleRooms()
+            //await loadSampleRooms()
             isLoading = false
         }
     }
 
-    @MainActor
-    func fetchRooms() async {
-        let roomsEndPoint = URL(string: "https://wetransfer.github.io/rooms.json")!
-        do {
-            let (jsondata, _) = try await URLSession.shared.data(from: roomsEndPoint)
-            let response = try JSONDecoder().decode(RoomsResponse.self, from: jsondata)
-            self.rooms = response.rooms
-        }
-        catch {
-            Log.networkActivity.error("Failed to load Rooms! Reason: \(error.localizedDescription)")
+    func fetchRooms() {
+        Task {
+            do {
+                try await roomsStore.fetchMeetingRooms()
+            }
+            catch {
+                Log.networkActivity.error("Failed to fetch Rooms! Reason: \(error.localizedDescription)")
+            }
         }
     }
 
@@ -121,10 +94,7 @@ final class RoomListViewModel: ObservableObject {
     }
 
     func requestRoomBooking() async throws -> Bool {
-        let bookRoomEndpoint = URL(string: "https://wetransfer.github.io/bookRoom.json")!
-        let (data, _) = try await URLSession.shared.data(from: bookRoomEndpoint)
-        let response = try JSONDecoder().decode(BookRoomResponse.self, from: data)
-        return response.success
+        try await roomsStore.performRoomBooking(for: "")
     }
 }
 
